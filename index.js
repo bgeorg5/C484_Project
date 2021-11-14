@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes/api');
-const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
@@ -21,7 +20,6 @@ app.use((req, res, next) => {
 });
 
 
-app.use(bodyParser.json());
 app.use('/api', routes);
 
 app.use((err, req, res, next) =>{
@@ -29,6 +27,8 @@ app.use((err, req, res, next) =>{
     next();
 });
 
+app.use("*", (req, res) => res.status(404).json({error: "not found"}))
+
 app.listen(port, () => {
-    console.log('Server running on port ${port}');
+    console.log("Server running on port " + port);
 });
