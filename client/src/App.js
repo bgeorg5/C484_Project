@@ -8,6 +8,7 @@ import Home from "./components/Home.js";
 import Login from "./components/Login.js";
 import Register from "./components/Register.js";
 import Forums from "./components/Forums.js";
+import Weather from "./components/Weather.js";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forums" element={<Forums />} />
+          <Route path="/weather" element={<Weather />} />
         </Routes>
       </div>
     </Router>
