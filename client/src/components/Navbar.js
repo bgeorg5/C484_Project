@@ -15,6 +15,9 @@ export default class Navbar extends Component {
             <Link to="/login" className="nav-link">Log in</Link>
           </li>
           <li className="navbar-item">
+            <Link to="/profile" className="nav-link">Profile</Link>{/* only visible if logged in, hide log in */}
+          </li>
+          <li className="navbar-item">
             <Link to="/forums" className="nav-link">Forums</Link>
           </li>
           <li className="navbar-item">

@@ -3,14 +3,17 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Navbar from "./components/Navbar.js"
-import Home from "./components/Home.js";
-import Login from "./components/Login.js";
-import Register from "./components/Register.js";
-import Forums from "./components/Forums.js";
-import Weather from "./components/Weather.js";
+import Navbar from "./components/Navbar"
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Forums from "./components/Forums";
+import Weather from "./components/Weather";
+import Profile from "./components/Profile";
+import Settings from "./components/Settings";
 
 function App() {
+
   return (
     <Router>
       <div className="container">
@@ -22,6 +25,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forums" element={<Forums />} />
           <Route path="/weather" element={<Weather />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>
     </Router>

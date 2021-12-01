@@ -1,10 +1,10 @@
 import { Component } from 'react';
 
-export default class Forums extends Component {
+export default class Settings extends Component {
     render() {
         return (
             <div>
-                <h1>Forums</h1>
+                <h1>Settings</h1>
             </div>
         );
     }
