@@ -7,7 +7,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <img src={logo} width="10%" height="7.5%"/>
+        <img src={logo} alt='logo' width="10%" height="7.5%"/>
         <Link to="/" className="navbar-brand">WeatherOrNot</Link>
         <div className="collapse navbar-collapse">
         <ul className="navbar-nav mr-auto">
