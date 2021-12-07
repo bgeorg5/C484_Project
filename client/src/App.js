@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-/* import logo from './'; */
+import logo from './logo.png';
 
 import AuthService from './services/authService';
 
@@ -40,6 +40,10 @@ class App extends Component {
     
     logOut() {
         AuthService.logout();
+        this.setState({
+            showAdminPage: false,
+            currentUser: undefined
+        });
     }
     
     render() {  
@@ -48,8 +52,8 @@ class App extends Component {
         return (
             <div>
                 <nav className="navbar navbar-dark bg-dark navbar-expand">
-                    {/* <img src={logo} alt='logo' width="10%" height="7.5%"/> */}
-                    <Link to="/" className="navbar-brand">WeatherOrNot</Link>
+                    <img src={logo} alt='logo' width="10%" height="7.5%"/>
+                    <Link to="/home" className="navbar-brand">WeatherOrNot</Link>
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav mr-auto">
                             <li className="navbar-item">
@@ -83,19 +87,18 @@ class App extends Component {
                   </div>
                 </nav>
             
-
-                
                     <div className="container">
                         <br/>
                         <Routes>
-                            <Route path="/" exact element={<Home />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/register" element={<Register />} />
-                            <Route path="/forums" element={<Forums />} />
-                            <Route path="/weather" element={<Weather />} />
-                            <Route path="/profile" element={<Profile />} />
-                            <Route path="/settings" element={<Settings />} />
-                            <Route path="/admin" element={<AdminPage />} />
+                            <Route exact path="/" element={<Home />} />
+                            <Route exact path="/home" element={<Home />} />
+                            <Route exact path="/login" element={<Login />} />
+                            <Route exact path="/register" element={<Register />} />
+                            <Route exact path="/forums" element={<Forums />} />
+                            <Route exact path="/weather" element={<Weather />} />
+                            <Route exact path="/profile" element={<Profile />} />
+                            <Route exact path="/settings" element={<Settings />} />
+                            <Route exact path="/admin" element={<AdminPage />} />
                             <Route path="*" element={<Error404 />} />
                         </Routes>
                     </div>

@@ -31,14 +31,12 @@ app.use(cors())
     next();
 }); 
 
-app.use('/api', routes);
+app.use('/api', routes); */
 
 app.use((err, req, res, next) =>{
     console.log(err);
     next();
-});
-
-app.use("*", (req, res) => res.status(404).json({error: "not found"})) */
+});    
 
 require("./app/routes/authRoutes")(app);
 require("./app/routes/userRoutes")(app);
@@ -71,5 +69,5 @@ function initial() {
         });
       }
     });
-  }
+}
   

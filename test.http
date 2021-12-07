@@ -5,5 +5,5 @@ Content-Type: application/json
     "fullName":"Will Smith",
     "email":"will@smith.com",
     "username":"will",
-    "password":"smith"
+    "password":"smith1"
 }

@@ -34,7 +34,7 @@ export default class Home extends Component {
                     <center>
                         <img src={logo} alt="WeatherOrNot Logo" />;
                         <h1>Welcome to WeatherOrNot!</h1>
-                        <h3>{this.state.content}</h3>
+                        {/* <h3>{this.state.content}</h3> */}
                     </center>
                 </header>    
             </div>
