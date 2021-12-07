@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import logo from '../logo.png';
 
 export default class Home extends Component {
