@@ -4,7 +4,7 @@ const forum = require('../models/forum');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-router.post('/register', async (req, res) => {
+/* router.post('/register', async (req, res) => {
 
 	const saltPassword = await bcrypt.genSalt(10);
 	const securePassword = await bcrypt.hash(req.body.password, saltPassword);
@@ -22,9 +22,13 @@ router.post('/register', async (req, res) => {
 	.catch(error =>{
 		res.json(error)
 	})
+
+	User.create(user)
+		.then((data) => res.json(data))
+	    .catch(next);
 });
 
-router.get('/login', async (req, res, next) => {
+router.post('/login', async (req, res, next) => {
 	const { username, password } = req.body;
 
 	User.findOne({ username }).then((user) => {
@@ -36,7 +40,7 @@ router.get('/login', async (req, res, next) => {
 			return res.status(204).json("User logged in");
 		})
 	})
-});
+}); */
 
 router.get('/forum', (req, res, next) => {
     forum.find({}, 'action')
